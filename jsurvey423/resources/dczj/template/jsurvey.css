@@ -1,0 +1,163 @@
+.n-msg {
+	text-shadow: 1px 1px 3px #fff, -1px 1px 3px #fff, 1px -1px 3px #fff,
+		-1px -1px 3px #fff;
+}
+
+input {
+	margin-right: 2px;
+}
+
+.answ_img {
+	max-width: 180px;
+	_width: expression(this.width > 180 ? "180px" : this.width);
+	max-height: 180px;
+	_height: expression(this.height > 180 ? "180px" : this.height);
+}
+
+#btnNext {
+	text-align: center;
+	line-height: 36px;
+	width: 120px;
+	height: 36px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+	background-color: #0080DD;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	border-radius: 5px;
+}
+
+#btnNext:HOVER {
+	background-color: #56B6FF;
+}
+
+.clearoption {
+	margin-left: 5px;
+	color: #cccccc;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	cursor: pointer;
+	display: none;
+}
+
+.clearoption:hover {
+	color: #bfefff;
+}
+
+.jsurvey-table{
+   font-size:16px;
+   width: 100%;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+.jsurvey-td-ques-title{
+    word-break: break-all;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #333;
+}
+.jsurvey-span-ques-title{
+    font-size: 20px;
+    font-family: 微软雅黑;
+}
+
+.jsurvey-td-ques-note{
+    word-break: break-all;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #333;
+}
+.jsurvey-span-ques-note{
+    margin-left:8px;
+    font-size: 14px;
+    font-family: 微软雅黑;
+}
+
+.jsurvey-messagebox {
+	color: #c33;
+	font-size: 12px;
+	font-weight: 600;
+	text-shadow: 1px 1px 3px #fff, -1px 1px 3px #fff, 1px -1px 3px #fff,-1px -1px 3px #fff
+}
+.jsurvey-td-answ{
+}
+.jsurvey-td-answ-table{
+	width: 100%;
+    margin-bottom: 10px;
+    word-break: break-all;
+    font-size: 16px;
+}
+.jsurvey-td-answ-lable{
+    cursor: pointer;
+    width: 16px;
+}
+
+.jsurvey-td-submit{
+   width: 50%;
+   padding-right: 20px; 
+   padding-top: 20px; 
+   padding-bottom: 20px;
+   text-align: right;
+}
+
+.jsurvey-td-reload{
+   width: 50%;
+   padding-right: 20px; 
+   padding-top: 20px; 
+   padding-bottom: 20px;
+   text-align: left;
+}
+
+.jsurvey-td-submit-input{
+    background-color: #57aeff;
+    width: 120px;
+    height: 40px;
+    font-family: '微软雅黑';
+    font-size: 20px;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.jsurvey-td-submit-input:hover{
+    background-color: #308ef2;
+}
+
+.jsurvey-td-reload-input{
+   background-color: #999;
+    width: 120px;
+    height: 40px;
+    color: white;
+    border: 0;
+    font-family: '微软雅黑';
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.jsurvey-td-reload-input:hover{
+    background-color: #808080;
+}
+
+.jsurvey-div-user{
+    width: 100%; 
+    margin: 0px auto; 
+    padding: 0px 0px 0px 0px; 
+    color: #fff; 
+}
+.jsurvey-td-info{
+	font-size:16px;
+	width: 6em;
+	
+}
+.jsurvey-td-info-span{
+	
+}

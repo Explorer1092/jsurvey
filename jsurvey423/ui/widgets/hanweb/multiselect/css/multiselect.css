@@ -1,0 +1,71 @@
+.multiselect {
+	height: auto !important;
+	min-height: 26px;
+	_height: 26px;
+	line-height: 17px;
+	padding-bottom: 4px;
+}
+
+.multiselect li {
+	float: left;
+	margin: 4px 3px 0 0;
+	background-color: #43A3F3;
+	border-radius: 3px;
+	color: #FFFFFF;
+	padding: 2px 4px;
+	color: #FFFFFF;
+	height: 18px;
+	white-space: nowrap;
+}
+
+.multiselect-remove {
+	font-size: 10px;
+	cursor: pointer;
+	line-height: 16px;
+	margin-right: 2px;
+	display: inline-block;
+}
+
+.multiselect .multiselect-input {
+	height: 15px;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+	background: none;
+	padding-left: 0;
+}
+
+.multiselect-input input {
+	width: 1px;
+	height: 18px;
+	border: none;
+	background-color: #FCFCFC;
+}
+
+.multiselect .multiselect-clear {
+	height: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	clear: both;
+	overflow: hidden;
+}
+
+.multiselect-option {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+
+.multiselect-option:hover {
+	background-color: #3fa5ec;
+	color: #FFF;
+}
+
+.multiselect li.hide,.multiselect-option.hide{
+	display: none;
+}

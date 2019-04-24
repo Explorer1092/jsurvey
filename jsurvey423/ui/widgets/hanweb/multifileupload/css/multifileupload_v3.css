@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+.multiupload-wrap{
+	position: relative;
+	overflow: hidden;
+}
+.multiupload-wrap>.error-msg{
+	font-size: 14px;
+	color: red;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 95px;
+	float: left;
+}
+.uploadify {
+	position: relative;
+	margin:0;
+	padding:0;
+}
+.uploadify-button{
+	border: 0;
+	border-radius: 0;
+	background-position: center center;
+}
+.uploadify:hover .uploadify-button{
+	background-position:center center;
+}
+.uploadify-queue{
+	margin-bottom: 0;
+}
+.uploadify-queue-item .cancel a{
+	cursor: pointer;
+}

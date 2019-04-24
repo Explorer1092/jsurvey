@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="  
+    http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ">
+	<bean class="com.hanweb.complat.service.GroupService"></bean>
+	<bean class="com.hanweb.complat.service.UserService"></bean>
+	<bean id="complat_TempFileService" class="com.hanweb.complat.service.TempFileService"></bean>
+	<bean class="com.hanweb.complat.service.RoleService"></bean>
+	<bean class="com.hanweb.complat.service.RoleRelationService"></bean>
+	<bean class="com.hanweb.complat.service.RightService"></bean>
+	<bean class="com.hanweb.complat.service.RoleRightService"></bean>
+	<bean class="com.hanweb.complat.service.GroupManagerService"></bean>
+	<bean class="com.hanweb.complat.service.OutsideUserService"></bean>
+	<bean class="com.hanweb.complat.service.BanListService"></bean>
+	<bean class="com.hanweb.complat.service.AccessLogService"></bean>
+	
+	<bean id="complat_GroupWsService" class="com.hanweb.complat.service.GroupWsService"></bean>
+	<bean id="complat_UserWsService" class="com.hanweb.complat.service.UserWsService"></bean>
+	<bean id="complat_OutSideUserWsService" class="com.hanweb.complat.service.OutSideUserWsService"></bean>
+	
+	<bean id="LocalFileUtil" name="LocalFileUtil" class="com.hanweb.common.util.file.LocalFileUtil"></bean>
+	<bean id="OSSFileUtil" name="OSSFileUtil" class="com.hanweb.common.util.file.OSSFileUtil"></bean>
+	<!-- <bean id="FileUtil" name="FileUtil" class="com.hanweb.common.util.file.LocalFileUtil"></bean> -->
+	<bean id="FileUtil" name="FileUtil" class="com.hanweb.common.util.file.OSSFileUtil"></bean>
+</beans>

@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+.login-box{
+	height: 265px; 
+	width: 441px;
+	background:url(../images/hb_pic_29.jpg) no-repeat;
+}
+html {
+	height: 100%;
+	overflow:hidden;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	overflow:hidden;
+}
+
+tr,td,span {
+	font-size: 9pt;
+	FONT-FAMILY: 宋体;
+	line-height: 180%;
+}
+
+.btnop {
+	cursor: hand;
+	filter: Alpha(Opacity =     100);
+}
+
+.btnop2 {
+	cursor: hand;
+	filter: alpha(opacity =     70);
+	opacity:0.7;
+}
+
+#manager-btn {
+	position: absolute;
+	top:0;
+	right: 20px;
+	height: 30px;
+	background-color: #43BBEF;
+	line-height: 28px;
+	padding: 3px 15px;
+}
+
+#manager-btn a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#manager-btn a:hover {
+	text-decoration: underline;
+}

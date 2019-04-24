@@ -1,0 +1,24 @@
+<div class="multiupload-wrap">
+	<div id="${id}" class="${clazz}" style="${style}" err-tip="${errTip}" startBtn="${startBtn}"></div>
+	<input type="hidden" name="${name}" id="${id}_val"/>
+	<script>
+	$(function(){
+		multiUpload_${id} = $('#${id}').multiUpload({
+			uploadUrl:'${config.uploadUrl}',
+			swfUrl:'${config.swfUrl}',
+			fileSize:'${config.fileSize}',
+			limit:${config.limit},
+			title : '${config.filter.title}',
+			extensions : '${config.filter.extensions}',
+			continuous:${config.continuous},
+			onAdded:${config.onAdded!'null'},
+			onRemoved:${config.onRemoved!'null'},
+			afterUpload:${config.afterUpload!'null'},
+			completeUpload:${config.completeUpload!'null'},
+			autoStart:${config.autoStart},
+			buttonImage:'${config.buttonImage}',
+			error:${config.error!'null'}
+		});
+	})
+	</script>
+</div>

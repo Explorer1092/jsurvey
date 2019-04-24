@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conns>
+	<conn>
+		<alias>1</alias>
+		<url>tcp://127.0.0.1:61616</url>
+		<user>admin</user>
+		<password>admin</password>
+		<brokerName>localhost</brokerName>
+	</conn>
+</conns>

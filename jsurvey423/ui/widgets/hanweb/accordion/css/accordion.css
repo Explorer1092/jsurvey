@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+dl.accordion {
+}
+
+dl.accordion dt {
+	background: #F3F3F3;	
+	padding: 10px 10px 10px 10px;
+	border-bottom: 1px solid #EEEEEE;
+	border-top: 1px solid #DCDCDC;
+	cursor: pointer;
+}
+
+dl.accordion dd {
+	display: none;
+	background: white;
+	margin: 0;
+}
+
+dl.accordion .active {
+	display: block;
+}
+
+dl.accordion dd>a.accordion-sub-menu{
+	display: block;
+	text-decoration: none;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+dl.accordion dd>a.accordion-sub-menu:hover,dl.accordion dd>a.accordion-sub-menu.selected{
+	background-color: #F8F8F8
+}

@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+.toggle {
+	display: none;
+}
+
+.toggle-wrap {
+	width: 48px;
+	height: 24px;
+	border-radius: 12px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.toggle-wrap.small {
+	width: 40px;
+	height: 20px;
+	border-radius: 10px;
+}
+
+.toggle-handle {
+	background-color: #FFF;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 2px;
+	margin: 0 2px;
+}
+
+.toggle-handle.small {
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+}
+
+.toggle-off {
+	background-color: #CCC;
+}
+
+.toggle-on {
+	background-color: #59D63C;
+}
+
+.toggle-checkbox {
+	display: none;
+}

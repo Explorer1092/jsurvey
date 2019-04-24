@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.layui-layer-title{
+	height: 30px;
+	line-height: 30px;
+}
+.layui-layer-btn a{
+	border-radius: 0;
+	font-size: 12px;
+	padding: 0 10px;
+	height: 24px;
+	line-height: 24px;
+}
+.layui-layer-setwin{
+	top: 9px;
+}

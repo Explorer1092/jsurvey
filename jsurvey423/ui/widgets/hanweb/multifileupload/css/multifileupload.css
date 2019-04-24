@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+.upload-filelist {
+	margin-top: 10px;
+}
+
+.upload-filelist i {
+	color: #FF3300;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.upload-filelist li {
+	color: #999;
+	height: 30px;
+	line-height: 30px;
+}
+
+.plupload_header{
+	display: none;
+}
+.plupload_scroll .plupload_filelist{
+	height: 100%;
+	background-color: #fafbfe;
+	border-left: 1px solid #e4e4e4;
+	border-right: 1px solid #e4e4e4;
+}
+.plupload_filelist_header, .plupload_filelist_footer{
+	background-color: #ffffff; 
+	border: 0;
+}
+.plupload_filelist_header{
+	border-bottom: 1px solid #e4e4e4;
+}
+.plupload_filelist_footer{
+	border-top: 1px solid #e4e4e4;
+}

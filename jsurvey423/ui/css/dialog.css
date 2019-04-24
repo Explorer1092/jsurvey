@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#dialog-content {
+	padding-top: 20px;
+	height: 100px;
+	overflow: auto;
+	position: relative;
+}
+
+#dialog-toolbar .btn {
+	margin-left: 10px;
+}
+
+#dialog-toolbar {
+	vertical-align: middle;
+	text-align: right;
+	width: 100%;
+	padding: 10px 0;
+}
+
+#dialog-toolbar-panel {
+	margin: 0 20px;
+}

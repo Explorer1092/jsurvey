@@ -1,0 +1,13 @@
+#pwdpower,.pwdpower {
+	margin-top: 9px;
+	overflow: hidden;
+	text-align: center;
+}
+
+#pwdpower li,.pwdpower li {
+	background-color: #f1f1f1;
+	width: 103px;
+	margin-right: 1px;
+	min-height: 10px;
+	float: left;
+}

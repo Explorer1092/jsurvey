@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aliyun-oss>
+    <endpoint></endpoint>
+    <accessKeyId></accessKeyId>
+    <secretAccessKey></secretAccessKey>
+    <baseurl></baseurl>
+    <buckets>
+        <bucket name="jcms">
+            <rules>
+                <rule>web\d+/info/</rule>
+                <rule>web\d+/modal/</rule>
+                <rule>web\d+/modalobject/</rule>
+            </rules>
+        </bucket>
+        <bucket name="jcmspub">
+            <rules>
+                <rule>site</rule>
+            </rules>
+        </bucket>
+    </buckets>
+</aliyun-oss>

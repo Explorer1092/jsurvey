@@ -1,0 +1,20 @@
+.placeholder-wrap{
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.placeholder-cover{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	color: #A9A9A9;
+	padding-left: 5px;
+	vertical-align: middle;
+	display: none;
+	font-weight: normal;
+	font-style: normal;
+	text-align: left;
+}

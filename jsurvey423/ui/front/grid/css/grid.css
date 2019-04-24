@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+.grid-data-list{
+	margin:auto 5px;
+}
+.grid-data-list.min-height {
+	min-height: 50px;
+}
+
+.data-grid-noresult, .data-grid-error {
+	margin: 20px 0;
+	text-align: center;
+	font-size: 14px;
+	color: #666666
+}
+
+.data-grid-error {
+	color: #cc0066
+}
+
+.grid-pagination {
+	margin-top: 5px;
+	text-align: center;
+	line-height: 20px;
+	height: 30px;
+}
+
+/************************paging的自定义************************/
+.ui-paging-container, .ui-paging-container li.ui-pager {
+	font-size: 14px;
+}
+
+.ui-paging-container {
+	
+}
+
+.ui-paging-container * {
+	vertical-align: top;
+	line-height: inherit;
+	height: inherit;
+}
+
+.ui-paging-container li {
+	margin-left: 0;
+	margin-right: 5px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.ui-paging-container li.ui-pager {
+	padding-left: 9px;
+	padding-right: 9px;
+}
+
+.ui-paging-container li.ui-paging-toolbar select {
+	height: 28px;
+}
+
+.ui-paging-container li.ui-paging-toolbar input {
+	height: 26px;
+	line-height: 26px;
+	vertical-align: top;
+	*margin-top: -1px
+}
+
+.ui-paging-container li.ui-paging-toolbar a {
+	height: 26px;
+	line-height: 26px;
+	padding-left: 9px;
+	padding-right: 9px;
+}
+.ui-paging-toolbar .select{
+	text-align: left;
+	height: 26px;
+	line-height: 26px;
+	vertical-align: top;
+}
+.ui-paging-toolbar .select-text{
+	*float: left;
+	*line-height: 30px;
+}
+.ui-paging-toolbar .select i{
+	width: 14px;
+	height:auto;
+	line-height: 22px;
+	background:none;
+	background-color:none;
+	top: 2px;
+	bottom: 2px;
+	filter:none
+}
+.ui-paging-toolbar .select.input-text{
+	height: 26px;
+	line-height: 26px;
+	vertical-align: top;
+}

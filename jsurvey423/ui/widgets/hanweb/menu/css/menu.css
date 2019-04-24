@@ -1,0 +1,39 @@
+.menu {
+	display: none;
+	position: absolute;
+	background: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	box-shadow: 2px 2px 1px #EFEFEF;
+	z-index: 10000;
+}
+
+.menu-content {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*******************************************************************/
+.level-menu{
+	font-size: 15px;
+}
+.level-menu>li{
+	padding: 5px 0;
+	padding-left: 30px;
+	cursor: pointer;
+}
+.level-menu>li:hover{
+	background-color: #E7E7E7;
+}
+.level-menu>li.selected{
+	background-color: #65B7EF;
+	color: white;
+}
+.level-menu>li>a{
+	display: block;
+	text-decoration: none;
+	color:#333;
+}
+.level-menu>li.selected>a{
+	color: white;
+}

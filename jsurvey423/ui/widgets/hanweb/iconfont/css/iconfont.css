@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'iconfont';
+	src: url('../../../../lib/iconfont/iconfont.eot');
+	src: url('../../../../lib/iconfont/iconfont.eot?#iefix')
+		format('embedded-opentype'),
+		url('../../../../lib/iconfont/iconfont.woff') format('woff'),
+		url('../../../../lib/iconfont/iconfont.ttf') format('truetype'),
+		url('../../../../lib/iconfont/iconfont.svg#iconfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.iconfont {
+	font-family: 'iconfont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	cursor: default;
+	/* 禁止选择 =========== */
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}
+
+.btn .iconfont, .datagrid-toolbar-btn .iconfont {
+	cursor: inherit;
+}

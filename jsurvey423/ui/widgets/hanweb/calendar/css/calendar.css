@@ -1,0 +1,7 @@
+/*日历控件*/
+.jcalendar {
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../imgs/calendar_btn.png) no-repeat right;
+	background-color: #FCFCFC;
+}

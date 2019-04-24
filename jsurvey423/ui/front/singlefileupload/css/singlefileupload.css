@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+.filestyle,.input-filestyle{
+	width: 90px;
+    height: 30px;
+}
+.filestyle{
+	background : url("singlefileupload.png");
+}

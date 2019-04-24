@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+    <edition>1.0</edition>
+    <copyright>大汉网络</copyright>
+    <description>在线调查html列表样式</description>
+  <stylecode><![CDATA["<table width="100%" border="0" cellspacing="0" cellpadding="0"style="margin-bottom:0px;margin-top:20px; padding:0px 0px;">
+                                <tbody><tr width="100%">
+                                  <td width="25%" align="right" style="font-size: 15px; color: #000;">手机号：</td>
+                                  <td width="75%" style="border: #c2e7f9 solid 0px;">
+                                    <input id="iphonenumber" name="iphonenumber" type="text" placeholder='请输入您的手机号码' style="margin:0px;width: 90%;" class="text-normal" data-rule="required;phonetype" data-rule-phonetype="[/(^(13|15)[0-9]{9}\\\\$)|(^(17|18)[0-9]{9}\\\\$)/,'格式不正确']" data-msg-required="必填！" data-target='#phonenumber' data-ok="填写成功！">
+                                  </td>
+                                  </tr>
+                                  <tr><td></td><td><span class='msg-box' id='phonenumber'></span></td></tr></tbody>
+                                  </table>
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0"style="margin-bottom:0px;margin-top:20px; padding:0px 0px;">
+                                  <tr>
+                                  <td width="25%" align="right" style="font-size: 15px; color: #000;">验证码：</td>
+                                 <td width="75%" style="line-height:35px;">
+                                    <input id="iponecode" name="iponecode" type="text" style="margin:0px;width: 48%;" placeholder='请输入验证码' class="text-normal" data-rule="required" data-msg-required="请填写验证码！"data-target="#codetig">
+                                   	 <span style="width:40%;height:95%;background-color:#57aeff;color:white;cursor:pointer;display:inline-block;text-align:center;border-radius:5px;" id="sendMobileCode"  onclick="sendCode('<!--dczjid-->','<!--phoneMessage-->')" >获取验证码</span>
+                                 	 <span style="width:40%;height:95%;background-color:#E8E8E8;color:#bbb;cursor: pointer;display:none;text-align:center;border-radius:5px;font-size:12px;" id="sendMobileCodeTime">120s后重新发送</span>
+                                  </td>
+                                  </tr>
+                                  <tr><td></td><td><span id="codetig" class="msg-box"></span></td></tr>
+                                  </table>
+                                  
+                                  
+                              
+
+   "]]></stylecode>
+</main>

@@ -1,0 +1,37 @@
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input { margin: 0; padding: 0; }
+body { font-size: 14px; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
+body{background: url(landbg.png) no-repeat}
+/* ui */
+.ui-input { position: relative; margin: 20px 0;font-size: 0;background: url("rebw.png") no-repeat left }
+.ui-input input { width: 72%; height: 48px; border: 0; font-size: 14px; outline: none;  border: 1px solid #999999;padding-left: 100px; }
+
+.ui-button { height: 40px; border: 0; font-size: 14px; outline: none; cursor: pointer; }
+.ui-button--primary { color: #fff; background-color: #57aeff; }
+.ui-button--success { color: #fff; background-color: #22d18e; }
+
+/* page */
+.form { width: 365px; margin: 0 auto; padding:0px 100px 50px 100px; background: #ffffff;}
+.form .captcha { height: 30px; vertical-align: top; cursor: pointer; }
+.form a { color: #7b7f81; }
+.form a:hover { color: #666; }
+
+.form-head { padding: 15px 0;color: #3498db; border-bottom: 1px solid #999999;}
+.form-head span { font-size: 17px; font-weight: 400;border-bottom: 2px solid #3498db;padding-bottom: 14px;}
+.form-head p { margin-top: 12px; color: #7b7f81; }
+.form-head p a { text-decoration: underline; }
+
+.form-body { }
+.form-body .err-msg { text-align: center; color: #fc5c5c; }
+
+.forget-password { margin-top: 10px; text-align: right; }
+.form .narrow-input input { width: 110px; margin-right: 20px; }
+.form .warn-msg { margin-bottom: 20px; }
+.form .err-msg + .warn-msg { margin-top: 12px; }
+.form .sms-button { cursor: pointer;display: inline-block; width: 130px;height: 48px;line-height: 48px; font-size: 14px; text-align: center; color: #22d18e;border: 1px solid #999999;background: #dfeffa }
+.form .smstime-button { cursor: pointer;display: none; width: 130px;height: 48px;line-height: 48px; font-size: 14px; text-align: center; color: #22d18e;border: 1px solid #999999;background: #dfeffa }
+.form .sms-button:hover { color: #56e9b2; }
+.form .form-notice { color: #22d18e; }
+.form .ui-input.focus { border-bottom-color: #22d18e; }
+.form .ui-button { width: 70%;height: 48px;line-height: 48px }

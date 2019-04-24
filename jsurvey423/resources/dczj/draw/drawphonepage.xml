@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+    <edition>1.0</edition>
+    <copyright>大汉网络</copyright>
+    <description>在线调查弹出层pc端样式</description>
+    <stylecode><![CDATA[<style>
+#drawbgcs {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	filter: Alpha(opacity = 50);
+	opacity: 0.5;
+	background: #4E5465;
+	display: none;
+}
+
+#drawboxcs {
+	position:fixed;
+	width:370px;
+	height:400px;
+	display:none;
+	margin:0 auto;
+	border-radius:5px;	
+	z-index:100;
+	 top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>
+<div id="drawbgcs"></div>
+	<div id="drawboxcs">
+	    <span style="position:absolute;top:6px;right:6px;display:inline-block;width:28px;height:28px;cursor:pointer;"><img src="../../resources/dczj/images/jumpdiv/close.png" width="27" height="26" onclick="closeDrawWind();"/></span>
+        <iframe style="width:400px;height:400px;" scrolling=”no” allowtransparency=”yes frameborder=”no” src="<!--drawsrc-->"></iframe>
+     </div>
+]]></stylecode>
+</main>

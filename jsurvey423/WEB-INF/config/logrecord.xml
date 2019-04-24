@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logRecord>
+	<!-- 将日志输出到其他数据库，如果不配置或者配置错误将会输出到默认数据库 -->
+	<dbConfig>
+		<alias>complat_log</alias>
+		<!-- 数据库类型 oracle:1,mssql:2,mysql:5 -->
+		<dbType></dbType>
+		<ip></ip>
+		<port></port>
+		<dbName></dbName>
+		<dbUser></dbUser>
+		<dbPassword></dbPassword>
+	</dbConfig>
+	<!-- 模式，0：本地模式，1：远程模式（忽略上述数据库配置） -->
+	<type>0</type>
+	<!-- 刷新日志暂存区的 轮询间隔 秒 -->
+	<rollTime>2</rollTime>
+	<!-- 日志远程接收入口，远程模式下有效 -->
+	<interfaceUrl></interfaceUrl>
+	<!-- 日志缓冲区大小，远程模式下有效 -->
+	<cacheSize>20</cacheSize>
+	<!-- 打包暂时持久化的日志大小，远程模式下有效  -->
+	<packageSize>20</packageSize>
+	<!-- 是否建立索引库，只对本地模式有效  -->
+	<createIndex>false</createIndex>
+</logRecord>

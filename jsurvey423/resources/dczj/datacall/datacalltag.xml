@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+    <edition>1.0</edition>
+    <copyright>大汉网络</copyright>
+    <description>标签</description>
+    <tag>
+        <item text="标题" value="dczj_title" />
+        <item text="状态" value="dczj_state" />
+        <item text="跳转链接" value="dczj_href" />
+        <item text="创建时间" value="dczj_time" />
+		<item text="开始时间" value="dczj_starttime" />
+		<item text="结束时间" value="dczj_endtime" />
+	</tag>
+</main>

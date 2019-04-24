@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+.validity-error{
+	color: #FF2B2B;
+	display: none;
+}

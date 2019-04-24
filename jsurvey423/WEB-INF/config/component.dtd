@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT components (component*)>
+
+<!ELEMENT component ((css|js)+,dependencies?)>
+<!ATTLIST component id ID #REQUIRED>
+
+<!ELEMENT css (#PCDATA)>
+<!ATTLIST css browser CDATA #IMPLIED>
+
+<!ELEMENT js (#PCDATA)>
+<!ATTLIST js browser CDATA #IMPLIED>
+
+<!ELEMENT dependencies (#PCDATA)>

@@ -1,0 +1,57 @@
+.chosen {
+	display: none;
+}
+
+a.rdobox, a.chkbox {
+	display: inline-block;
+	padding: 6px;
+	height: 16px;
+	line-height: 16px;
+	background: #eee;
+	text-decoration : none;
+	color: #666;
+	*display: inline;
+	*zoom: 1;
+	cursor: pointer;
+	margin-right: 5px;
+	font-size: 14px;
+}
+.check-image{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: -4px;
+	vertical-align: middle;
+	*display: inline;
+	*zoom: 1;
+}
+a.chkbox .check-image {
+	background: url(input-unchecked.png) no-repeat;
+}
+a.chkbox.checkbox .check-image{
+	background: url(checkbox.png) center center no-repeat;
+}
+a.chkbox.checked .check-image{
+	background: url(input-checked.png) no-repeat;
+}
+
+.unchecked {
+	background: #ECF0F1;
+	color: #666;
+	transition-property: background;
+	transition-delay: 0s;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+}
+
+.unchecked:hover {
+	background: #dedfe0;
+}
+
+a.rdobox.checked, a.chkbox.checked {
+	background: #5FBE5F;
+	color: #fff;
+}
+.radiobox-content{
+	margin-left: 5px;
+}

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+    <edition>1.0</edition>
+    <copyright>大汉网络</copyright>
+    <description>在线调查问题样式</description>
+    <stylecode><![CDATA["<!--unitname=单选题-->
+<div id="surveyAnsw_<!--divquesId-->" class="surveyAnsw" >
+<form action="addquessubmit.do" method="post" id="oprform_<!--divquesId-->" class="layui-form">
+<input type="hidden" name="quesId" value="<!--divquesId-->">
+<div style="text-align:right;width: 100%;">
+<button class="layui-btn layui-btn-sm layui-btn-warm" align="right" onclick="divsubmit(<!--divquesId-->,0);">保存</button>
+</div>
+<div style="width: 90%;margin-left:20px;">
+<span class="span-ques-text">题目：</span><input type="text" class="input-text" value="<!--divQuesName-->" id="quesName" name="quesName" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<span class="span-ques-text">备注：</span><input type="text" class="input-text" value="<!--divQuesNote-->" id="quesNote" name="quesNote" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<table style="width: 95%;">
+<tr>
+<td style="width:120px;">
+<span class="span-ques-text">类型：单选题</span>
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">是否必填：</span><input type="checkbox" value="1" name="mustfill" id="mustfill_<!--divquesId-->" title="必填">
+</td>
+<td style="width:220px;">
+<span class="span-ques-text">是否公开结果：</span><input type="checkbox" value="1" name="showpublish" id="showpublish_<!--divquesId-->" title="公开">
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">仅投票用：</span><input type="checkbox" value="1" name="dczjtype" id="dczjtype_<!--divquesId-->" title="投票">
+</td>
+</tr>
+</table>
+</div>
+<div style="margin-left:20px;margin-top:10px;margin-right:20px;">
+<table style="width: 90%;" id="surveyAnsw_table_<!--divquesId-->">
+<tbody id="surveyAnsw_tbody_<!--divquesId-->">
+<tr style="width: 100%;">
+<td style="width: 25%;background-color:#E7E7E7"><span class="span-ques-text">选项</span></td>
+<td style="width: 25%;background-color:#E7E7E7"><span class="span-ques-text">备注</span></td>
+<td style="width: 120px;text-align: center;background-color:#E7E7E7"><span class="span-ques-text">操作</span></td>
+<td style="width: 80px;text-align: center;background-color:#E7E7E7"><span class="span-ques-text">允许填空</span></td>
+<td style="width: 80px;text-align: center;background-color:#E7E7E7"><span class="span-ques-text">基数</span></td>
+<td style="width: 80px;text-align: center;background-color:#E7E7E7">图片</td>
+<td></td>
+</tr>
+<!--for name="答案"-->
+<tr id="survey_answ_<!--trAnswId-->" style="width: 100%;line-height: 40px;">
+<td style="width: 25%;"><input type="text" style="width: 90%" class="input-text" name="tdAnswName_<!--trAnswId-->" value="<!--tdAnswName-->"></td>
+<td style="width: 25%;"><input type="text" style="width: 90%" class="input-text" name="tdAnswNote_<!--trAnswId-->" value="<!--tdAnswNote-->"></td>
+<td style="width: 120px;text-align: center;">
+<table style="width:100px;margin-left:10px;">
+<tr>
+<td><img src="../../resources/dczj/images/ques/answadd.png" style="height: 24px; cursor: pointer;" onclick="addAnsw(<!--divquesId-->,0);">
+</td>
+<td><img src="../../resources/dczj/images/ques/answdelete.png" style="height: 24px; cursor: pointer;" onclick="removeAnsw(<!--trAnswId-->);">
+</td>
+<td><img src="../../resources/dczj/images/ques/answup.png" style="height: 24px; cursor: pointer;" onclick="sortAnsw(<!--divquesId-->,<!--trAnswId-->,1);">
+</td>
+<td><img src="../../resources/dczj/images/ques/answdown.png" style="height: 24px; cursor: pointer;" onclick="sortAnsw(<!--divquesId-->,<!--trAnswId-->,2);">
+</td>
+</tr>
+</table>
+</td>
+<td style="width: 80px;text-align: center;">
+<input type="hidden" id="allowFillInAir_<!--trAnswId-->" name="allowFillInAir_<!--trAnswId-->" value="<!--allowFillInAir-->">
+</td>
+<td style="width: 80px;text-align: center;">
+<input type="text" class="input-text" id="basepoint_<!--trAnswId-->" name="basepoint_<!--trAnswId-->" value='<!--basepoint-->' style="width: 30px;height:30px;font-size: 14px;" >
+</td>
+<td style="width: 80px;text-align: center;">
+<a title="图片上传"><img src="../../resources/dczj/images/ques/upload.png" style="height: 24px; cursor: pointer;" onclick="uploadpic(<!--divquesId-->,<!--trAnswId-->);"></a>
+<a id="answ_delete_<!--trAnswId-->" title="图片删除" style="display:<!--answ_display-->;"><img src="../../resources/dczj/images/ques/answdelete.png" style="height: 24px; cursor: pointer;" onclick="deletepic(<!--trAnswId-->);"></a>
+<input type="hidden" id="answ_imgname_<!--trAnswId-->" name="answ_imgname_<!--trAnswId-->" value="<!--answ_imgname-->"/>
+</td>
+</tr>
+<!--/for-->
+</tbody>
+</table>
+<table style="width: 100%;margin-top:20px;">
+<tr>
+<td>
+<hr class="layui-bg-black">
+</td>
+<td style="width:100px;text-align:center; cursor: pointer;" onclick="advancedsetting(<!--divquesId-->);" >
+<span class="span-ques-text">高级设置<img id="setting_img_<!--divquesId-->" src="../../resources/dczj/images/ques/open.png" style="height: 16px;"></span>
+</td>
+<td>
+<hr class="layui-bg-black">
+</td>
+</tr>
+</table>
+<table id="setting_table_<!--divquesId-->"style="margin-top:10px;display:none;">
+<tr>
+<td style="width:200px;">
+<span class="span-ques-text">每行显示：<input type="text" class="input-text" name="col" value='<!--quesCol-->' style="width: 50px; font-size: 14px;margin-right:10px;" >列</span>
+</td>
+<td style="width:200px;">
+<span class="span-ques-text">显示依赖：<input type="button" class="btn btn-primary" style="height: 30px;" value="选择" onclick="selectAnswId(<!--divquesId-->);"> <input type="button" class="btn btn-primary" style="height: 30px;" value="清除" onclick="clearAnswId(<!--divquesId-->);"></span>
+</td>
+</tr>
+</table>
+</div>
+</form>
+</div>
+<!--/unitname=单选题--><!--unitname=多选题-->
+<div id="surveyAnsw_<!--divquesId-->" class="surveyAnsw" >
+<form action="addquessubmit.do" method="post" id="oprform_<!--divquesId-->" class="layui-form">
+<input type="hidden" name="quesId" value="<!--divquesId-->">
+<div style="text-align:right;width: 100%;">
+<button class="layui-btn layui-btn-sm layui-btn-warm" align="right" onclick="divsubmit(<!--divquesId-->,0);">保存</button>
+</div>
+<div style="width: 90%;margin-left:20px;">
+<span class="span-ques-text">题目：</span><input type="text" class="input-text" value="<!--divQuesName-->" id="quesName" name="quesName" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<span class="span-ques-text">备注：</span><input type="text" class="input-text" value="<!--divQuesNote-->" id="quesNote" name="quesNote" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<table style="width: 95%;">
+<tr>
+<td style="width:120px;">
+<span class="span-ques-text">类型：多选题</span>
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">是否必填：</span><input type="checkbox" value="1" name="mustfill" id="mustfill_<!--divquesId-->" title="必填">
+</td>
+<td style="width:220px;">
+<span class="span-ques-text">是否公开结果：</span><input type="checkbox" value="1" name="showpublish" id="showpublish_<!--divquesId-->" title="公开">
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">仅投票用：</span><input type="checkbox" value="1" name="dczjtype" id="dczjtype_<!--divquesId-->" title="投票">
+</td>
+</tr>
+</table>
+</div>
+<div style="margin-left:20px;margin-top:10px;margin-right:20px;">
+<table style="width: 90%;" id="surveyAnsw_table_<!--divquesId-->">
+<tbody id="surveyAnsw_tbody_<!--divquesId-->">
+<tr style="width: 100%;">
+<td style="width: 25%;background-color:#E7E7E7"><span class="span-ques-text">选项</span></td>
+<td style="width: 25%;background-color:#E7E7E7"><span class="span-ques-text">备注</span></td>
+<td style="width: 120px;text-align: center;background-color:#E7E7E7"><span class="span-ques-text">操作</span></td>
+<td style="width: 80px;text-align: center;background-color:#E7E7E7"><span class="span-ques-text">允许填空</span></td>
+<td style="width: 80px;text-align: center;background-color:#E7E7E7"><span class="span-ques-text">基数</span></td>
+<td style="width: 80px;text-align: center;background-color:#E7E7E7">图片</td>
+<td></td>
+</tr>
+<!--for name="答案"-->
+<tr id="survey_answ_<!--trAnswId-->" style="width: 100%;line-height: 40px;">
+<td style="width: 25%;"><input type="text" style="width: 90%" class="input-text" name="tdAnswName_<!--trAnswId-->" value="<!--tdAnswName-->"></td>
+<td style="width: 25%;"><input type="text" style="width: 90%" class="input-text" name="tdAnswNote_<!--trAnswId-->" value="<!--tdAnswNote-->"></td>
+<td style="width: 120px;text-align: center;">
+<table style="width:100px;margin-left:10px;">
+<tr>
+<td><img src="../../resources/dczj/images/ques/answadd.png" style="height: 24px; cursor: pointer;" onclick="addAnsw(<!--divquesId-->,1);">
+</td>
+<td><img src="../../resources/dczj/images/ques/answdelete.png" style="height: 24px; cursor: pointer;" onclick="removeAnsw(<!--trAnswId-->);">
+</td>
+<td><img src="../../resources/dczj/images/ques/answup.png" style="height: 24px; cursor: pointer;" onclick="sortAnsw(<!--divquesId-->,<!--trAnswId-->,1);">
+</td>
+<td><img src="../../resources/dczj/images/ques/answdown.png" style="height: 24px; cursor: pointer;" onclick="sortAnsw(<!--divquesId-->,<!--trAnswId-->,2);">
+</td>
+</tr>
+</table>
+</td>
+<td style="width: 80px;text-align: center;">
+<input type="hidden" id="allowFillInAir_<!--trAnswId-->" name="allowFillInAir_<!--trAnswId-->" value="<!--allowFillInAir-->">
+</td>
+<td style="width: 80px;text-align: center;">
+<input type="text" class="input-text" id="basepoint_<!--trAnswId-->" name="basepoint_<!--trAnswId-->" value='<!--basepoint-->' style="width: 30px;height:30px;font-size: 14px;" >
+</td>
+<td style="width: 80px;text-align: center;">
+<a title="图片上传"><img src="../../resources/dczj/images/ques/upload.png" style="height: 24px; cursor: pointer;" onclick="uploadpic(<!--divquesId-->,<!--trAnswId-->);"></a>
+<a id="answ_delete_<!--trAnswId-->" title="图片删除" style="display:<!--answ_display-->;"><img src="../../resources/dczj/images/ques/answdelete.png" style="height: 24px; cursor: pointer;" onclick="deletepic(<!--trAnswId-->);"></a>
+<input type="hidden" id="answ_imgname_<!--trAnswId-->" name="answ_imgname_<!--trAnswId-->" value="<!--answ_imgname-->"/>
+</td>
+</tr>
+<!--/for-->
+</tbody>
+</table>
+<table style="width: 100%;margin-top:20px;">
+<tr>
+<td>
+<hr class="layui-bg-black">
+</td>
+<td style="width:100px;text-align:center; cursor: pointer;" onclick="advancedsetting(<!--divquesId-->);" >
+<span class="span-ques-text">高级设置<img id="setting_img_<!--divquesId-->" src="../../resources/dczj/images/ques/open.png" style="height: 16px;"></span>
+</td>
+<td>
+<hr class="layui-bg-black">
+</td>
+</tr>
+</table>
+<table id="setting_table_<!--divquesId-->"style="margin-top:10px;display:none;">
+<tr>
+<td style="width:200px;">
+<span class="span-ques-text">每行显示：<input type="text" class="input-text" name="col" value='<!--quesCol-->' style="width: 50px; font-size: 14px;margin-right:10px;" >列</span>
+</td>
+<td style="width:200px;">
+<span class="span-ques-text">显示依赖：<input type="button" class="btn btn-primary" style="height: 30px;" value="选择" onclick="selectAnswId(<!--divquesId-->);"> <input type="button" class="btn btn-primary" style="height: 30px;" value="清除" onclick="clearAnswId(<!--divquesId-->);"></span>
+</td>
+<td style="width:200px;">
+<span class="span-ques-text">至少选择：<input id="min_<!--divquesId-->" type="text" class="input-text" name="i_min" value='<!--quesMin-->' style="width: 50px; font-size: 14px;margin-right: 10px;" >项</span>
+</td>
+<td style="width:200px;">
+<span class="span-ques-text">至多选择：<input id="max_<!--divquesId-->" type="text" class="input-text" name="i_max" value='<!--quesMax-->' style="width: 50px; font-size: 14px;margin-right: 10px;" >项</span>
+</td>
+</tr>
+</table>
+</div>
+</form>
+</div>
+<!--/unitname=多选题--><!--unitname=问答题-->
+<div id="surveyAnsw_<!--divquesId-->" class="surveyAnsw" >
+<form action="addquessubmit.do" method="post" id="oprform_<!--divquesId-->" class="layui-form">
+<input type="hidden" name="quesId" value="<!--divquesId-->">
+<div style="text-align:right;width: 100%;">
+<button class="layui-btn layui-btn-sm layui-btn-warm" align="right" onclick="divsubmit(<!--divquesId-->,0);">保存</button>
+</div>
+<div style="width: 90%;margin-left:20px;">
+<span class="span-ques-text">题目：</span><input type="text" class="input-text" value="<!--divQuesName-->" id="quesName" name="quesName" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<span class="span-ques-text">备注：</span><input type="text" class="input-text" value="<!--divQuesNote-->" id="quesNote" name="quesNote" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<table style="width: 95%;">
+<tr>
+<td style="width:120px;">
+<span class="span-ques-text">类型：多行文本题</span>
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">是否必填：</span><input type="checkbox" value="1" name="mustfill" id="mustfill_<!--divquesId-->" title="必填">
+</td>
+<td style="width:220px;">
+<span class="span-ques-text">是否公开结果：</span><input type="checkbox" value="1" name="showpublish" id="showpublish_<!--divquesId-->" title="公开">
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">仅投票用：</span><input type="checkbox" value="1" name="dczjtype" id="dczjtype_<!--divquesId-->" title="投票">
+</td>
+</tr>
+</table>
+</div>
+<div style="margin-left:20px;margin-top:10px;margin-right:20px;">
+<table style="width: 100%;margin-top:20px;">
+<tr>
+<td>
+<hr class="layui-bg-black">
+</td>
+<td style="width:100px;text-align:center; cursor: pointer;" onclick="advancedsetting(<!--divquesId-->);" >
+<span class="span-ques-text">高级设置<img id="setting_img_<!--divquesId-->" src="../../resources/dczj/images/ques/open.png" style="height: 16px;"></span>
+</td>
+<td>
+<hr class="layui-bg-black">
+</td>
+</tr>
+</table>
+<table id="setting_table_<!--divquesId-->"style="margin-top:10px;display:none;">
+<tr>
+<td style="width:180px;">
+<span class="span-ques-text">宽：<input id="textinputwidth_<!--divquesId-->" type="text" class="input-text" name="textinputwidth" value='<!--textinputwidth-->' style="width: 50px; font-size: 14px;margin-right: 10px;" >px</span>
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">高：<input id="textinputheight_<!--divquesId-->" type="text" class="input-text" name="textinputheight" value='<!--textinputheight-->' style="width: 50px; font-size: 14px;margin-right: 10px;" >px</span>
+</td>
+<td style="width:200px;">
+<span class="span-ques-text">显示依赖：<input type="button" class="btn btn-primary" style="height: 30px;" value="选择" onclick="selectAnswId(<!--divquesId-->);"> <input type="button" class="btn btn-primary" style="height: 30px;" value="清除" onclick="clearAnswId(<!--divquesId-->);"></span>
+</td>
+</tr>
+</table>
+</div>
+</form>
+</div>
+<!--/unitname=问答题--><!--unitname=小结区-->
+<div id="surveyAnsw_<!--divquesId-->" class="surveyAnsw" >
+<form action="addquessubmit.do" method="post" id="oprform_<!--divquesId-->">
+<input type="hidden" name="quesId" value="<!--divquesId-->">
+<div style="text-align:right;width: 100%;"><input type="button" class="btn btn-success" value="保存" align="right" onclick="divsubmit(<!--divquesId-->,3);"></div>
+	<table style="width: 90%;margin-left: 20px;">
+		<tr>
+			<td style="width: 100%">
+			<script type="text/plain" id="quesContent" name="quesContent"><!--divContent--></script> 
+			<script>
+ 								var editorOption = { 
+ 									initialFrameHeight : 350,  
+  									wordCount : false,
+  									elementPathEnabled : false,
+ 									toolbars : [ [ 'source', '|', 'undo', 'redo', '|', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|', 'rowspacingtop', 'rowspacingbottom', 'lineheight', '|', 'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|', 'link', 'unlink', '|', 'horizontal', 'preview', 'searchreplace','insertimage','attachment' ] ]
+  								}; 
+
+								ueditor = UE.getEditor('quesContent',editorOption); 
+  							</script>
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--/unitname=小结区--><!--unitname=文本题-->
+<div id="surveyAnsw_<!--divquesId-->" class="surveyAnsw" >
+<form action="addquessubmit.do" method="post" id="oprform_<!--divquesId-->" class="layui-form">
+<input type="hidden" name="quesId" value="<!--divquesId-->">
+<div style="text-align:right;width: 100%;">
+<button class="layui-btn layui-btn-sm layui-btn-warm" align="right" onclick="divsubmit(<!--divquesId-->,0);">保存</button>
+</div>
+<div style="width: 90%;margin-left:20px;">
+<span class="span-ques-text">题目：</span><input type="text" class="input-text" value="<!--divQuesName-->" id="quesName" name="quesName" style="width: 90%;max-width: 500px;">
+</div>
+<div style="width: 90%;margin-left:20px;margin-top:10px;">
+<table style="width: 95%;">
+<tr>
+<td style="width:120px;">
+<span class="span-ques-text">类型：单行文本题</span>
+</td>
+<td style="width:180px;">
+<span class="span-ques-text">是否必填：</span><input type="checkbox" value="1" name="mustfill" id="mustfill_<!--divquesId-->" title="必填">
+</td>
+<td style="width:220px;">
+<span class="span-ques-text">是否公开结果：</span><input type="checkbox" value="1" name="showpublish" id="showpublish_<!--divquesId-->" title="公开">
+</td>
+</tr>
+</table>
+</div>
+<div style="margin-left:20px;margin-top:10px;margin-right:20px;">
+<table style="width: 100%;margin-top:20px;">
+<tr>
+<td>
+<hr class="layui-bg-black">
+</td>
+<td style="width:100px;text-align:center; cursor: pointer;" onclick="advancedsetting(<!--divquesId-->);" >
+<span class="span-ques-text">高级设置<img id="setting_img_<!--divquesId-->" src="../../resources/dczj/images/ques/open.png" style="height: 16px;"></span>
+</td>
+<td>
+<hr class="layui-bg-black">
+</td>
+</tr>
+</table>
+<table id="setting_table_<!--divquesId-->"style="margin-top:10px;display:none;">
+<tr>
+<td style="width:200px;">
+<span class="span-ques-text">显示依赖：<input type="button" class="btn btn-primary" style="height: 30px;" value="选择" onclick="selectAnswId(<!--divquesId-->);"> <input type="button" class="btn btn-primary" style="height: 30px;" value="清除" onclick="clearAnswId(<!--divquesId-->);"></span>
+</td>
+<td style="width:100px;">
+<span class="span-ques-text">校验规则:
+</span>
+</td>
+<td style="width:200px;"><select id="validaterules" name="validaterules" lay-filter="validaterules">
+    <option value="0">不限</option>
+    <option value="1">中文</option>
+    <option value="2">数字</option>
+    <option value="3">邮箱</option>
+    <option value="4">手机号</option></select>
+</td>
+<td><span style="font-size:8px;margin-left:10px;color:red">校验规则在题目必填时才生效</span></td>
+</tr>
+</table>
+</div>
+</form>
+</div>
+<!--/unitname=文本题-->"]]></stylecode>
+</main>

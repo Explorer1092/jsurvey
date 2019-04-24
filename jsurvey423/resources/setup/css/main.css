@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+html,body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.top {
+	background-color: #2A7FB7;
+	background-image: url("../images/banner.png");
+	background-repeat: repeat-x;
+	color: white;
+	font: 15px "Microsoft YaHei", tahoma, arial;
+	height: 56px;
+	position: relative;
+	line-height: 56px;
+}
+
+.top a {
+	color: #BADDF4;
+}
+
+.log {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 25px;
+	font-size: 25px;
+}
+
+.logout {
+	font-size: 18px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 15px;
+}
+
+.left {
+	background-color: whiteSmoke;
+	border-right: 1px solid #E0E0E0;
+	width: 195px;
+	position: relative;
+}
+
+.nav {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	padding-top: 13px;
+	color: #777;
+	font: 15px "Microsoft YaHei", tahoma, arial;
+	letter-spacing: 1px;
+}
+
+.nav li {
+	height: 44px;
+	line-height: 44px;
+	margin-top: 7px;
+	text-align: left;
+}
+
+.nav li img {
+	margin-right: 10px;
+	vertical-align: -6px;
+}
+
+.nav li a {
+	display: block;
+	padding-left: 20px;
+	color: #000;
+	text-decoration: none;
+}
+
+.nav li.active {
+	background-image: url("../images/bg.png");
+	background-repeat: repeat-x;
+	color: #303030;
+}
+
+.nav li:hover {
+	background-image: url("../images/bg.png");
+	background-repeat: repeat-x;
+	background-color: #DDECF5;
+}
+
+#mainTB td {
+	border-bottom: 1px dashed #E7E7E7 !important;
+	padding: 10px;
+	height: 25px;
+}
+
+.crumb-path {
+	color: #388FC9;
+	background: #FAFAFB;
+	border-bottom: 1px solid #F2F2F2;
+	height: 38px;
+	line-height: 38px;
+	font-size: 18px;
+	padding-left: 20px;
+	font-family: "微软雅黑";
+}
+
+img {
+	border: none;
+}
+#ssoinfo{
+	margin-top: 10px;
+}
+#jisConfig{
+	overflow: hidden;
+}
+#jisConfig>div{
+	margin: 5px 0 0 5px;
+}
+#jisConfig>div>span{
+	width: 70px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	>	
+	<bean class="com.hanweb.complat.dao.GroupDAO"></bean>
+	<bean class="com.hanweb.complat.dao.UserDAO"></bean>
+	<bean class="com.hanweb.complat.dao.TempFileDAO"></bean>
+	<bean class="com.hanweb.complat.dao.RoleDAO"></bean>
+	<bean class="com.hanweb.complat.dao.RoleRelationDAO"></bean>
+	<bean class="com.hanweb.complat.dao.RoleRightDAO"></bean>
+	<bean class="com.hanweb.complat.dao.RightDAO"></bean>
+	<bean class="com.hanweb.complat.dao.GroupManagerDAO"></bean>
+	<bean class="com.hanweb.complat.dao.OutsideUserDAO"></bean>
+	<bean class="com.hanweb.complat.dao.BanListDAO"></bean>
+	<bean class="com.hanweb.complat.dao.AccessLogDAO"></bean>
+</beans>
