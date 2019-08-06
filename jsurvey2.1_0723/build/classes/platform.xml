@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 开发平台配置 -->
+<platform>
+	<!-- 是否为调试模式（开发模式），freemark为实时更新 -->
+	<debug>true</debug>
+	<!-- 权限配置 -->
+	<permissions>
+		<!-- 默认权限 -->
+		<permission>
+			<!-- 权限名称 -->
+			<name>default</name>
+			<!-- 权限适配器，继承 AbsPermissionAdapter-->
+			<adapter>com.hanweb.common.permission.SimplePermissionAdapter</adapter>
+			<!-- 权限判断方式，keyword：关键字模式，url：url地址模式，NULL：继承上级 -->
+			<validModal>keyword</validModal>
+		</permission>
+	</permissions>
+</platform>

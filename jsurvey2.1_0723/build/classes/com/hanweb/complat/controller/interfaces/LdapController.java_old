@@ -1,0 +1,197 @@
+package com.hanweb.complat.controller.interfaces;
+
+import java.util.Map;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.parser.Parser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.hanweb.common.BaseInfo;
+import com.hanweb.common.util.FileUtil;
+import com.hanweb.common.util.JsonUtil;
+import com.hanweb.common.util.StringUtil;
+import com.hanweb.complat.service.LdapService;
+import com.hanweb.sso.ldap.util.MD5;
+
+/**
+ * SSO接口
+ * 
+ * @author wt
+ * 
+ */
+@Controller
+@RequestMapping(value = "interface/ldap")
+public class LdapController {
+
+	@Autowired
+	private LdapService ldapService;
+
+	protected Log logger = LogFactory.getLog(getClass());
+
+	/**
+	 * 单点登录接收接口
+	 * 
+	 * @param formBean
+	 * @return
+	 */
+	@RequestMapping(value = "receive")
+	public ModelAndView receive(@RequestParam(value = "parameters", required = false) String parameters) {
+		if (!BaseInfo.isSso()) {
+			logger.info("系统未开启SSO，不能被接入");
+			return null;
+		}
+		if (StringUtil.isEmpty(parameters)) {
+			logger.error("参数为空");
+			return null;
+		}
+		String xmlPath = ldapService.getXmlFile("0");
+		String xmlContent = FileUtil.readFileToString(xmlPath);
+		Document document = Jsoup.parse(xmlContent, "", Parser.xmlParser());
+		String enckey = document.select("ldap>enckey").text();
+		if (enckey == null || "".equals(enckey)) {
+			logger.error("秘钥为空");
+			return null;
+		}
+		String encrypttype = document.select("ldap>encrypttype").text();
+		MD5 md5 = new MD5();
+		parameters = md5.decrypt(parameters, enckey);
+		logger.debug(parameters);
+		Map<String, String> jsonObject = JsonUtil.StringToObject(parameters, Map.class);
+
+		ReceiveFormBean formBean = new ReceiveFormBean();
+		String stateKey = "state";
+		// 操作状态位
+		String state = jsonObject.get(stateKey);
+		// 判断状态位是否正确
+		if ((!"C".equals(state)) && (!"D".equals(state))) {
+			logger.error("状态位不正确");
+			return null;
+		} else {
+			formBean.setState(state);
+		}
+		if (jsonObject.containsKey("email")) {
+			formBean.setEmail(jsonObject.get("email"));
+		}
+		if (jsonObject.containsKey("mobile")) {
+			formBean.setMobile(jsonObject.get("mobile"));
+		}
+		// 实名
+		String tName = "";
+		if (jsonObject.containsKey("t_name")) {
+			tName = jsonObject.get("t_name");
+		}
+		// 解密姓名
+		if ("1".equals(encrypttype)) {
+			tName = md5.decrypt(tName, enckey);
+		} else if ("2".equals(encrypttype)) {
+			tName = md5.decryptMB(tName, enckey);
+		}
+		formBean.setTname(tName);
+		if (jsonObject.containsKey("address")) {
+			formBean.setAddress(jsonObject.get("address"));
+		}
+		if (jsonObject.containsKey("sex")) {
+			formBean.setSex(jsonObject.get("sex"));
+		}
+		if (jsonObject.containsKey("result")) {
+			formBean.setResult(jsonObject.get("result"));
+		}
+		if (jsonObject.containsKey("loginuser")) {
+			formBean.setLoginuser(jsonObject.get("loginuser"));
+		}
+		if (jsonObject.containsKey("loginpass")) {
+			formBean.setLoginpass(jsonObject.get("loginpass"));
+		}
+		if (jsonObject.containsKey("domainname")) {
+			formBean.setDomainname(jsonObject.get("domainname"));
+		}
+		if (jsonObject.containsKey("appid")) {
+			formBean.setAppid(jsonObject.get("appid"));
+		}
+		// 内网 0 or 外网 1
+		String web = "";
+		if (jsonObject.containsKey("web")) {
+			web = jsonObject.get("web");
+		}
+		// 不是内网 则是外网
+		if (!"1".equals(web)) {
+			web = "0";
+		}
+		formBean.setWeb(web);
+		if (jsonObject.containsKey("url")) {
+			formBean.setUrl(jsonObject.get("url"));
+		}
+		// 是否需要修改本地用户，默认 T（T是 F否 U只支持UPDATE操作）
+		String modifyuser = "";
+		if (jsonObject.containsKey("modifyuser")) {
+			modifyuser = jsonObject.get("modifyuser");
+		}
+		if ("".equals(modifyuser) || modifyuser == null) {
+			modifyuser = "T";
+		}
+		// sso 调用地址
+		formBean.setModifyuser(modifyuser);
+		if (jsonObject.containsKey("ssourl")) {
+			formBean.setSsourl(jsonObject.get("ssourl"));
+		}
+
+		ModelAndView modelAndView = new ModelAndView("complat/interfaces/ldap/receive");
+		String result = formBean.getResult();
+		boolean isSuccess = false;
+		modelAndView.addObject(state, state);
+		// if(state.equalsIgnoreCase("S")){ //注册
+		// isSuccess = ldapService.register(formBean);
+		// modelAndView.addObject("msg", "应用系统注册" + (isSuccess ? "成功" : "失败") + "！");
+		// } else
+		// 单点登录
+		if ("C".equalsIgnoreCase(state) && "T".equalsIgnoreCase(result)) { 
+			formBean = ldapService.readXML(formBean);
+			formBean = decryptFormBean(formBean);
+
+			isSuccess = ldapService.checkValidate(formBean);
+
+			modelAndView.addObject("formBean", formBean);
+		} else if (state.equalsIgnoreCase("D")) { 
+			// 删除用户
+			isSuccess = ldapService.removeUser(formBean);
+			modelAndView.addObject("msg", "用户删除" + (isSuccess ? "成功" : "失败") + "！");
+		}
+		modelAndView.addObject("isSuccess", isSuccess);
+		return modelAndView;
+	}
+
+	/**
+	 * 解密用户信息
+	 * 
+	 * @param formBean
+	 * @return
+	 */
+	private ReceiveFormBean decryptFormBean(ReceiveFormBean formBean) {
+		String loginId = formBean.getLoginuser();
+		String password = formBean.getLoginpass();
+		String encrypttype = formBean.getEncrypttype();
+		String enckey = formBean.getEnckey();
+		MD5 md5 = new MD5();
+		if ("1".equals(encrypttype)) {
+			loginId = md5.decrypt(loginId, enckey);
+			password = md5.decrypt(password, enckey);
+		} else if ("2".equals(encrypttype)) {
+			loginId = md5.decryptMB(loginId, enckey);
+			password = md5.decryptMB(password, enckey);
+		}
+		formBean.setLoginuser(loginId);
+		formBean.setLoginpass(password);
+		// try {
+		// formBean.setT_name(URLDecoder.decode(formBean.getT_name(), "UTF-8"));
+		// } catch (Exception e) {
+		// }
+		return formBean;
+	}
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+    <edition>1.0</edition>
+    <copyright>大汉网络</copyright>
+    <description>在线调查html表单样式</description>
+    <stylecode><![CDATA["<!--unitname=题目区-->
+<div id="surveyPaging0">
+		<!--for name="问题"-->
+		<table id="<!--tableid-->" class="jsurvey-table" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td class="jsurvey-td-ques-title">
+				<span class="jsurvey-span-ques-title">
+						<!--number-->
+						<!--title-->
+						<!--qmustfill-->
+						<!--qustscore-->
+				</span><span id="<!--messageid-->" class="jsurvey-messagebox"></span>
+				<!--clearoption--></td>
+			</tr>
+			<!--jsurveyquesnote-->
+			<tr>
+				<td class="jsurvey-td-answ"><table class="jsurvey-td-answ-table">
+						<!--for name="答案"-->
+						<tr class="survey_listbg">
+							<td>
+								<!--option-->&nbsp;<!--answ_img-->
+								<!--title-->
+							</td>
+						</tr>
+						<!--/for-->
+					</table></td>
+			</tr>
+		</table>
+		<!--/for-->
+	</div>
+<!--/unitname=题目区-->
+<!--unitname=用户信息区-->
+<div id="userform" style="padding-top: 20px;">
+		<div class="jsurvey-div-user">
+			<!--userbasemessage-->
+			<!--phonecode-->
+			<table width='100%' border='0' cellspacing='0' cellpadding='0' style='margin-bottom: 20px; margin-top: 20px; padding: 0px 0px;font-size:16px;'>
+				<tbody>
+					<tr>
+						<td align='right' style='font-size: 16px; color: #000;width:8em'>
+							<!--validatecodename-->
+						</td>
+						<td align='center' style='color: red; font-size: 16px;width:1em'>
+							<!--validatecodemust-->
+						</td>
+						<td style='border: #c2e7f9 solid 0px;width:19em''>
+							<!--validatecode-->
+						</td>
+						<td><span id="validcode" class="msg-box"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<!--/unitname=用户信息区-->
+
+<!--unitname=提交区-->
+<div style="padding-left: 30%; color: red; font-size: 20px; padding-top: 20px;">
+		<span id="errormessage"></span>
+	</div>
+	<table id="tableSubmit" class="jsurvey-table" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr style="text-align: center;">
+				<td class="jsurvey-td-submit"><input type="button" value="提交" class="jsurvey-td-submit-input" onclick="surveysubmitvalidate();"></td>
+				<td class="jsurvey-td-reload"><input type="button" value="重新填写" class="jsurvey-td-reload-input" onclick="location.reload();"></td>
+			</tr>
+		</tbody>
+	</table>
+<!--/unitname=提交区-->
+"]]></stylecode>
+</main>

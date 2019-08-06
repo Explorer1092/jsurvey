@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="  
+    http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ">
+    <bean class="com.hanweb.dczj.service.TitleInfoService"></bean>
+	<bean class="com.hanweb.dczj.service.QuesInfoService"></bean>
+	<bean class="com.hanweb.dczj.service.AnswInfoService"></bean>
+	<bean class="com.hanweb.dczj.service.StyleService"></bean>
+	<bean class="com.hanweb.dczj.service.TemplateService"></bean>
+	<bean class="com.hanweb.dczj.service.CommonTemplateStyleService"></bean>
+	<bean class="com.hanweb.dczj.service.DisplayConfigService"></bean>
+	<bean class="com.hanweb.dczj.service.PublishService"></bean>
+	<bean class="com.hanweb.dczj.service.PhonePublishService"></bean>
+	<bean class="com.hanweb.dczj.service.PublishTaskService"></bean>
+	<bean class="com.hanweb.dczj.service.WebSiteService"></bean>
+	<bean class="com.hanweb.dczj.service.WebManagerService"></bean>
+	<bean class="com.hanweb.dczj.service.SensitiveService"></bean>
+	<bean class="com.hanweb.dczj.service.LogService"></bean>
+	<bean class="com.hanweb.dczj.service.SettingService"></bean>
+	<bean class="com.hanweb.dczj.service.PrizeSettingService"></bean>
+	<bean class="com.hanweb.dczj.service.ThanksSettingService"></bean>
+	<bean class="com.hanweb.dczj.service.DrawWinnersInfoService"></bean>
+	<bean class="com.hanweb.dczj.service.MessageContentService"></bean>
+	<bean class="com.hanweb.dczj.service.TotalRecoService"></bean>
+	<bean class="com.hanweb.dczj.service.CheckedBoxRecoService"></bean>
+	<bean class="com.hanweb.dczj.service.ContentRecoService"></bean>
+	<bean class="com.hanweb.dczj.service.RadioRecoService"></bean>
+	<bean class="com.hanweb.dczj.service.CountService"></bean>
+	<bean class="com.hanweb.dczj.service.FrontSubmitService"></bean>
+	<bean class="com.hanweb.dczj.service.DataCallPublishService"></bean>
+	<bean class="com.hanweb.dczj.service.DataCallService"></bean>
+	<bean class="com.hanweb.dczj.service.DataCallTempService"></bean>
+	<bean class="com.hanweb.dczj.service.LimitLoginUserService"></bean>
+	<bean class="com.hanweb.dczj.service.LimitOpenUserService"></bean>
+	<bean class="com.hanweb.dczj.service.SentPhoneMessageService"></bean>
+	<bean class="com.hanweb.dczj.service.SurveyMobilelogService"></bean>
+	<bean class="com.hanweb.dczj.service.RegisterMqListenerService"></bean>
+    <bean class="com.hanweb.dczj.service.FrontVerificationService"></bean>
+    <bean class="com.hanweb.dczj.service.DataMigrationService"></bean>
+    <bean class="com.hanweb.dczj.service.VisitCountService"></bean>
+    <bean class="com.hanweb.dczj.service.DczjStatisticalListTaskService"></bean>
+</beans>

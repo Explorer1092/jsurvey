@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<inner>
+		<groupentity path="com.hanweb.complat.entity.Group" id="iid" groupcode="codeId" 
+			groupname="name" pargroupid="pid"/>
+		<groupservice path="com.hanweb.complat.webservice.jis.JisGroupSync" addmethod="addGroup" 
+			modifymethod="modifyGroup"  removemethod="removeGroup"  
+			findmethod="findGroup" msg="msg"/>
+		<userentity path="com.hanweb.complat.entity.User" id="iid" loginname="loginName" 
+			loginpass="pwd" username="name" groupid="groupId" 
+			groupname="groupName" comptel="phone" 
+			mobile="mobile" email="email" headShip="headship" qq="qq" uuid="uuid" code="code" />
+		<userservice path="com.hanweb.complat.webservice.jis.JisUserSync" addmethod="addUser"
+			modifymethod="modifyUser"  removemethod="removeUser" 
+			enablemethod="enableUser" disablemethod="disableUser"
+			findmethod="findUser" msg="msg"/>
+		<app appmark="" encrypttype="" enckey="" jisurl="" privatekey=""  keystorefile="" keypassword="" /><!-- appmark、encrypttype、enckey、jisurl由本系统提供给接入系统 -->
+	</inner>
+	<outer>
+		<userentity path="com.hanweb.complat.entity.OutsideUser" id="iid" loginname="loginName" 
+			loginpass="pwd" username="name" comptel="phone" 
+			mobile="mobile" email="email" headShip="headship" qq="qq" uuid="uuid" />
+		<userservice path="com.hanweb.complat.webservice.jis.JisOutSideUserSync" addmethod="addUser"
+			modifymethod="modifyUser"  removemethod="removeUser" 
+			enablemethod="enableUser" disablemethod="disableUser"
+			findmethod="findUser" msg="msg"/>
+		<app appmark="" encrypttype="" enckey="" jisurl="" privatekey=""  keystorefile="" keypassword="" />
+	</outer>
+	<version>340</version>   <!-- 判断是否是310同步密码是否是可逆 -->
+	
+</root>

@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+.ztree * {
+	font-size: 13px;
+	font-family: inherit;
+}
+
+.ztree li a,.ztree li a.curSelectedNode {
+	line-height: 24px;
+	height: 24px;
+}
+
+.ztree li span.button {
+	margin-top: 4px;
+}
+
+.ztree li span.ico_open.button,.ztree li span.ico_close.button {
+	margin-right: 5px;
+}
+
+.ztree {
+	padding: 0;
+}
+
+.fitWidth li ul {
+	margin: 0;
+	padding: 0;
+}
+
+.fitWidth li a {
+	padding: 0;
+	display: block;
+}
+
+.ztree li a {
+	padding-top:0;
+}
+
+.ztree li span.button.chk {
+	margin-top: 6px;
+}
+
+.ztree li a:hover {
+	text-decoration: none;
+	background-color: #E7E7E7;
+}
+
+.ztree li a.curSelectedNode {
+	background-color: #3fa5ec;
+	color: #FFF;
+	border: 0;
+}
+
+.ztree li span.button.switch {
+	vertical-align: top;
+}
+
+.ztree li span {
+	line-height: 24px;
+}
+.ztree li span.button.add {
+	margin-left: 2px;
+	margin-right: -1px;
+	background-position: -144px 0;
+	vertical-align: top;
+}
